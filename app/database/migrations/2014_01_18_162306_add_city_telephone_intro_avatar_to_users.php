@@ -12,10 +12,10 @@ class AddCityTelephoneIntroAvatarToUsers extends Migration {
 	public function up()
 	{
 			Schema::table('users',function($table){
-			$table->string('city');
-			$table->integer('telephone');
-			$table->string('intro');
-			$table->string('avatar');
+			//$table->string('city');
+			//$table->integer('telephone');
+			//$table->string('intro');
+			//$table->string('avatar');
 			});
 		//
 	}

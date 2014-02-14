@@ -99,6 +99,15 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
  *  ------------------------------------------
  */
 
+//酒店
+Route::get('hotel/index','HotelController@getIndex');
+Route::get('hotel/{id}','HotelController@getView');
+//机票
+//用户相册
+//用户攻略
+//攻略赞
+//留言板
+//用户
 //用户相册
 Route::get('test','UserpicController@test');
 Route::get('travel/user/album/data', 'UserpicController@getAlbumData');
@@ -145,8 +154,6 @@ Route::get('travel/{travel}/show',function($id){
 });
 Route::controller('travel','TravelController');
 
-Route::get('hotel/index','HotelController@getIndex');
-Route::get('hotel/{id}','HotelController@getView');
 Route::get('ticket/index','TicketController@getIndex');
 Route::get('ticket/{id}','TicketController@getView');
 

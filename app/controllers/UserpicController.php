@@ -16,9 +16,9 @@ class UserpicController extends BaseController {
 				$user = $this->user->currentUser();
 				if(empty($user)){
 						return Redirect::to('user/login');
-				}
-				if(empty($userpics = $this->userpic->where('user_id', '=', $user->id)->orderBy('created_at','ASC')->get())){
-				return View::make('fiji/user/album',compact('user','userpics'))->with('warning','你还没有添加任何照片');
+				}$userpics = $this->userpic->where('user_id', '=', $user->id)->orderBy('created_at','ASC')->get();
+				if(empty($userpics)){
+				return View::make('fiji/user/album',compact('user','userpics'))->with('warning','jiofjiewjfioaj');
 				}
 				return View::make('fiji/user/album',compact('user','userpics'));
 

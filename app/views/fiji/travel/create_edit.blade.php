@@ -42,6 +42,8 @@ editor.html('');
 <div class="content">
 				<div class="raiders_head"></div>
 					<form method="post" id="form_travel" action="{{{ URL::to('travel/create') }}}" accept-charset="UTF-8">
+		<!-- CSRF Token -->
+		<input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 				<div class="raiders_title">
 					<p>攻略标题<input name="title" type=text value="" id="works_title" /></p>
 				</div>

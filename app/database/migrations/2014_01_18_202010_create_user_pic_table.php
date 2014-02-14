@@ -16,8 +16,8 @@ class CreateUserPicTable extends Migration {
 					$table->engine	=	'InnoDB';
 					$table->increments('id')->unsigned();
 					$table->integer('user_id')->unsigned();
-					$table->string('pic_url');
 					$table->timestamps();
+					$table->string('pic_url');
 			});
 	}
 
@@ -28,7 +28,7 @@ class CreateUserPicTable extends Migration {
 	 */
 	public function down()
 	{
-			Shcema::drop('userpics');
+			Schema::drop('userpics');
 		//
 	}
 
