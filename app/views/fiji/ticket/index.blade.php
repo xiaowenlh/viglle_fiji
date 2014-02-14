@@ -154,9 +154,9 @@
 @stop
 
 @section('scripts')
-	<script type="text/javascript" src="js/jquery.js"></script> 
-	<script type="text/javascript" src="js/haccordion.js"></script> 
-	<script src="My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+	<script type="text/javascript" src="{{{ asset('js/jquery.js') }}} "></script> 
+	<script type="text/javascript" src=" {{{ asset('js/haccordion.js') }}} "></script> 
+	<script src="{{{ asset('js/My97DatePicker/WdatePicker.js') }}} " type="text/javascript"></script>
 	<script type="text/javascript">
 		haccordion.setup({
 		accordionid: 'line_show', //main accordion div id
