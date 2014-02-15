@@ -105,13 +105,23 @@ Route::get('hotel/{id}','HotelController@getView');
 //机票
 //用户相册
 //用户攻略
+Route::get('travel/{travel}/post', function(){
+		return View::make('fiji/travel/create_edit');
+});
+Route::get('travel/index','TravelController@getIndex');
+Route::get('travel/{travel}/show',function($id){
+Route::get('travel/user/album/data', 'UserpicController@getAlbumData');
+Route::post('travel/user/album/upload', 'UserpicController@postAlbumData');
+		return View::make('fiji/travel/show');
+});
+Route::get('travel/user/album/data', 'UserpicController@getAlbumData');
+Route::post('travel/user/album/upload', 'UserpicController@postAlbumData');
+Route::controller('travel','TravelController');
 //攻略赞
 //留言板
 //用户
 //用户相册
 Route::get('test','UserpicController@test');
-Route::get('travel/user/album/data', 'UserpicController@getAlbumData');
-Route::post('travel/user/album/upload', 'UserpicController@postAlbumData');
 Route::get('user/album', 'UserpicController@getAlbum');
 Route::post('user/album', 'UserpicController@postAlbum');
 Route::get('user/show', 'UserController@getUserShow');
@@ -145,14 +155,6 @@ Route::get('contact-us', function()
 Route::get('post/{postSlug}', 'BlogController@getView');
 Route::post('post/{postSlug}', 'BlogController@postView');
 
-Route::get('travel/{travel}/post', function(){
-		return View::make('fiji/travel/create_edit');
-});
-Route::get('travel/index','TravelController@getIndex');
-Route::get('travel/{travel}/show',function($id){
-		return View::make('fiji/travel/show');
-});
-Route::controller('travel','TravelController');
 
 Route::get('ticket/index','TicketController@getIndex');
 Route::get('ticket/{id}','TicketController@getView');
