@@ -11,10 +11,15 @@
 							<div class="content_show_title">
 								<ul>
 									<li class="content_show_border"></li>
-									<li class="raiders_img"><img src="images/user1.png" width=50 height=50 /></li>
+									<li class="raiders_img"><img src="http://placehold.it/50x50" width=50 height=50 /></li>
 									<li class="raiders_show_msg">
-										<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-										<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
+										<p class="raiders_title">{{{ $travel->title }}}</p>
+										<p>
+                                        <a href=" {{{ $author->url() }}} ">
+                                        <span class="raiders_user_name">{{{ $author->username }}}</span>
+                                        </a>
+                                        <span class="raiders_user_time">发布于2013/5/9 14:32:02</span>
+                                        </p>
 									</li>
 								</ul>
 							</div>

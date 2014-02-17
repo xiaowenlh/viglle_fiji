@@ -52,4 +52,15 @@ class TravelController extends BaseController{
 				return Redirect::to('travel/create')->withInput()->withErrors($validator);
 		}
 
+        public function getShow($id){
+            $travel = $this->travel->where('id','=',$id)->first();
+            $author = $this->user->where('id','=',$travel->user_id)->first();
+            if(is_null($travel)){
+                return App::abort(404);
+            }
+            $user = $this->user->currentUser();
+            //return var_dump($author);
+            return View::make('fiji/travel/show',compact('travel','user','author'));
+        }
+
 }

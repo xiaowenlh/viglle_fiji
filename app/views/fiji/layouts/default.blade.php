@@ -55,7 +55,7 @@
 						 @if (Auth::user()->hasRole('admin'))
 						 <li style="font-size:12px;"><a href="{{{ URL::to('admin') }}}"> 管理员</a></li>
 						  @endif
-						 <li style="font-size:12px;"><a href="{{{ URL::to('user/show') }}}"> {{{ Auth::user()->username }}}</a></li>
+						 <li style="font-size:12px;"><a href="{{{ URL::to('user/show/'.Auth::user()->id) }}}"> {{{ Auth::user()->username }}}</a></li>
 						  <li style="font-size:12px;"><a href="{{{ URL::to('user/logout') }}}">登出</a></li>
 						@else
 							<li style="font-size:12px;" {{ (Request::is('user/login') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/login') }}}" class="iframe">登陆</a></li>

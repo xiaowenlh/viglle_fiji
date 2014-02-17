@@ -33,12 +33,18 @@ class UserController extends BaseController {
 			return View::make('fiji/user/index', compact('users'));
 	}
 
-	public function getUserShow(){
-			$user = $this->user->currentUser();
-				if(empty($user)){
-						return Redirect::to('user/login');
-				}
-				$userpics = $this->userpic->where('user_id', '=', $user->id)->orderBy('created_at','DESC')->take(4)->get();
+	public function getUserShow($id){
+        $user = $this->user->where('id','=',$id)->first();
+        if(empty($user)){
+                //return Redirect::to('user/login');
+            return App::abort(404);
+        }
+        $userpics = $this->userpic->where('user_id', '=', $user->id)->orderBy('created_at','DESC')->take(8)->get();
+        $travels = $this->travel->where('user_id','=',$user->id)->orderBy('created_at','DESC')->paginate(10);
+        $comments = $user->comments()->orderBy('created_at', 'ASC')->get();
+        //TO-DO 加入用户权限控制
+        
+
 
 	//		$user = $this->user->where('id', '=', $user)->first();
 	//		if(is_null($user)){
@@ -53,8 +59,49 @@ class UserController extends BaseController {
 	//		}
 	//		//结束判断
 
-			return View::make('fiji/user/user',compact('user','userpics'));
+			return View::make('fiji/user/user',compact('user','userpics','travels','comments'));
 	}
+
+    public function postUserShow($id){
+        $user = $this->user->currentUser();
+        if(is_null($user)){
+            return Redirect::to('user/login')
+                ->with( 'notice', '评论需要先行登陆' );
+        }
+
+        $who = $this->user->where('id','=',$id)->first();
+
+        
+		$rules = array(
+			'usercomment' => 'required|min:3'
+		);
+
+		// Validate the inputs
+		$validator = Validator::make(Input::all(), $rules);
+
+		// Check if the form validates with success
+		if ($validator->passes())
+		{
+			// Save the comment
+			$usercomment = new Usercomment;
+			$usercomment->user_id = Auth::user()->id;
+            $usercomment->owner_id = $who->id;
+			$usercomment->content = Input::get('comment');
+
+			// Was the comment saved with success?
+			if($user->comments()->save($usercomment))
+			{
+				// Redirect to this blog post page
+				return Redirect::to($slug . '#comments')->with('success', 'Your comment was added with success.');
+			}
+
+			// Redirect to this blog post page
+			return Redirect::to($slug . '#comments')->with('error', 'There was a problem adding your comment, please try again.');
+		}
+
+		// Redirect to this blog post page
+		return Redirect::to($slug)->withInput()->withErrors($validator);
+    }
 
     /**
      * Users settings page

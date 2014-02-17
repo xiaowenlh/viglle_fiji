@@ -104,27 +104,23 @@ Route::get('hotel/index','HotelController@getIndex');
 Route::get('hotel/{id}','HotelController@getView');
 //机票
 //用户相册
+Route::get('user/album', 'UserpicController@getAlbum');
+Route::post('user/album', 'UserpicController@postAlbum');
 //用户攻略
 Route::get('travel/{travel}/post', function(){
 		return View::make('fiji/travel/create_edit');
 });
+
 Route::get('travel/index','TravelController@getIndex');
-Route::get('travel/{travel}/show',function($id){
-Route::get('travel/user/album/data', 'UserpicController@getAlbumData');
-Route::post('travel/user/album/upload', 'UserpicController@postAlbumData');
-		return View::make('fiji/travel/show');
-});
+Route::get('travel/{travel}/show','TravelController@getShow');
 Route::get('travel/user/album/data', 'UserpicController@getAlbumData');
 Route::post('travel/user/album/upload', 'UserpicController@postAlbumData');
 Route::controller('travel','TravelController');
 //攻略赞
 //留言板
 //用户
-//用户相册
-Route::get('test','UserpicController@test');
-Route::get('user/album', 'UserpicController@getAlbum');
-Route::post('user/album', 'UserpicController@postAlbum');
-Route::get('user/show', 'UserController@getUserShow');
+Route::get('user/show/{id}', 'UserController@getUserShow');
+Route::post('user/show/{id}', 'UserController@postUserShow');
 Route::get('user/list', 'UserController@getUserList');//获取用户列表，用户模型应该增加选择首页展示字段。
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset');

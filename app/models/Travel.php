@@ -44,7 +44,7 @@ class Travel extends Eloquent{
 	 */
 	public function url()
 	{
-		//return Url::to('post/'.$this->slug);
+		return Url::to('travel/'.$this->id.'/show');
 	}
 
 	/**

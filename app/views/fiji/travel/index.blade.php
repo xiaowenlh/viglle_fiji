@@ -19,61 +19,20 @@
 					<div class="raiders_msg">
 						<ul class="raiders_content">
 @foreach($travels as $travel)
-							<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
+							<li class="raiders_li1">
+                            <img src="{{{ $travel->has_pic }}}" alt="">
+                            </li>
 							<li class="raiders_li2">
 								<div style="width:580px;margin:20px;">
-									<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-									<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
-									<p class="raiders_user_text">也许你没听过斐济这个地方，也还不知道它到底在地球的那一个角落……</p>
+                                    <a href=" {{{ $travel->url() }}} ">    <p class="raiders_title">{{{ $travel->title }}}</p></a>
+                                    <p><span class="raiders_user_name">{{{ $travel->author->username }}}</span><span class="raiders_user_time">发布于{{{ $travel->date() }}}</span></p>
+									<p class="raiders_user_text">{{{ $travel->content }}}……</p>
 								</div>
 								<div class="raiders_user_good"></div>
-								<p align=right><span class="good_count">469</span></p>
+								<p align=right><span class="good_count">{{{ $travel->mark }}}</span></p>
 							</li>
 @endforeach
 							
-							<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
-							<li class="raiders_li2">
-								<div style="width:580px;margin:20px;">
-									<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-									<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
-									<p class="raiders_user_text">也许你没听过斐济这个地方，也还不知道它到底在地球的那一个角落……</p>
-								</div>
-								<div class="raiders_user_good"></div>
-								<p align=right><span class="good_count">469</span></p>
-							</li>
-							
-							<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
-							<li class="raiders_li2">
-								<div style="width:580px;margin:20px;">
-									<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-									<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
-									<p class="raiders_user_text">也许你没听过斐济这个地方，也还不知道它到底在地球的那一个角落……</p>
-								</div>
-								<div class="raiders_user_good"></div>
-								<p align=right><span class="good_count">469</span></p>
-							</li>
-							
-							<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
-							<li class="raiders_li2">
-								<div style="width:580px;margin:20px;">
-									<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-									<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
-									<p class="raiders_user_text">也许你没听过斐济这个地方，也还不知道它到底在地球的那一个角落……</p>
-								</div>
-								<div class="raiders_user_good"></div>
-								<p align=right><span class="good_count">469</span></p>
-							</li>
-							
-							<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
-							<li class="raiders_li2">
-								<div style="width:580px;margin:20px;">
-									<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-									<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
-									<p class="raiders_user_text">也许你没听过斐济这个地方，也还不知道它到底在地球的那一个角落……</p>
-								</div>
-								<div class="raiders_user_good"></div>
-								<p align=right><span class="good_count">469</span></p>
-							</li>
 						</ul>
 					</div>
 					<div>

@@ -9,17 +9,17 @@
 @section('userprofile')
 <div id="user_mes">
 						<div class="user_img">
-							<img src="images/user1.png" width=230 height=230 style="margin:6px 6px;" />
+							<img src=" {{{ $user->avatar }}} " width=230 height=230 style="margin:6px 6px;" />
 						</div>
 						<div class="user_content">
 							<div class="user_set"></div>
 							<div class="user_word">
 								<div class="user_top">
-									<div class="user_introduce"><span style="margin-left:20px;">爱吃玫瑰的猫</span></div>
+									<div class="user_introduce"><span style="margin-left:20px;">{{{ $user->username }}}</span></div>
 									<div class="user_Triangle"></div>
 								</div>
 								<div class="user_bottom">
-									<div class="user_show_word">你心似海，一半是光一半是影，一半是海水一半是眼泪。</div>
+									<div class="user_show_word">{{{ $user->intro }}}</div>
 									<p>编辑个人介绍</p>
 								</div>
 							</div>
@@ -38,7 +38,7 @@
 						<table cellspacing=0 cellpadding=0 class="user_all_img" style="width:1100px;">
 							<tr>
 @foreach($userpics as $userpic)
-								<td class="imgs_td"><img src="{{{ asset($userpic->pic_url.'/origin.jpg') }}}" width=200 height=200 /></td>
+								<td class="imgs_td"><img src="{{{ asset($userpic->pic_url.'/'.$userpic->filename) }}}" width=200 height=200 /></td>
 @endforeach
 								<td>&nbsp;</td>
 							</tr>
@@ -56,16 +56,20 @@
 						<div class="content_user_card_bottom"></div>
 						<div class="raiders_msg">
 							<ul class="raiders_content">
-								<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
+@foreach($travels as $travel)
+								<li class="raiders_li1"><img src=" {{{ $travel->has_pic }}} " width=300 height=200 /></li>
 								<li class="raiders_li2">
 									<div style="width:380px;margin:20px;">
-										<p class="raiders_title">上帝恩赐的礼物：斐济</p>
-										<p><span class="raiders_user_name">晚起的心</span><span class="raiders_user_time">发布于2013/5/9 14:32:02</span></p>
-										<p class="raiders_user_text">也许你没听过斐济这个地方，也还不知道它到底在地球的那一个角落……</p>
+                                        <a href=" {{{ $travel->url() }}} ">
+										<p class="raiders_title">{{{ $travel->title }}}</p>
+                                        </a>
+                                        <p><span class="raiders_user_name">{{{ $travel->author->username }}}</span><span class="raiders_user_time">发布于{{{ $travel->date() }}}</span></p>
+                                        <p class="raiders_user_text">{{{ $travel->content }}}……</p>
 									</div>
 									<div class="raiders_user_good"></div>
-									<p align=right><span class="good_count">469</span></p>
+                                    <p align=right><span class="good_count">{{{ $travel->mark }}}</span></p>
 								</li>
+@endforeach
 								
 								<li class="raiders_li1"><img src="images/user1.png" width=300 height=200 /></li>
 								<li class="raiders_li2">
