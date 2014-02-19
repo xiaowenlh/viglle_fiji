@@ -37,6 +37,19 @@
 	</head>
 	<body>
 		<div class="box" id="box">
+
+		<script type="text/javascript">
+			function check_screen()
+			{
+				var w=window.screen.width;
+				var width=document.documentElement.clientWidth;
+				if(w<1920)
+				{
+					document.getElementById("box").style.left=-(1920-width)/2+"px";
+				}
+			}
+			check_screen();
+		</script>
 			<!-- 头部开始  -->
 			<div class="head">
 				<div class="head_list">
@@ -95,18 +108,6 @@
 							$.colorbox.close();
 						});
 				})
-		</script>
-		<script type="text/javascript">
-			function check_screen()
-			{
-				var w=window.screen.width;
-				var width=document.documentElement.clientWidth;
-				if(w<1920)
-				{
-					document.getElementById("box").style.left=-(1920-width)/2+"px";
-				}
-			}
-			check_screen();
 		</script>
 	</body>
 </html>

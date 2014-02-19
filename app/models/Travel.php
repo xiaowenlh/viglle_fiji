@@ -11,6 +11,10 @@ class Travel extends Eloquent{
 		return nl2br($this->content);
 	}
 
+    public function summary(){
+        return strip_tags(nl2br($this->content));
+    }
+
 	/**
 	 * Get the post's author.
 	 *
