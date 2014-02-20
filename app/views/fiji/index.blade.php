@@ -12,13 +12,21 @@
 				<div class="content_body">
 				<div class="hotel_1">
 					<div class="hotel_part1">
-						<div class="hotel_part1_img1" style="background:url('{{{ URL::asset($hotels[0]->pic1_url) }}}/origin.jpg') no-repeat;"></div>
-						<div class="hotel_part1_img2" style="background:url('{{{ URL::asset($hotels[0]->pic2_url) }}}/origin.jpg') no-repeat;"></div>
+						<div class="hotel_part1_img1">
+							<img src="{{{ URL::asset($hotels[0]->pic1_url) }}}/origin.jpg" />
+						</div>
+						<div class="hotel_part1_img2">
+							<img src="{{{ URL::asset($hotels[0]->pic2_url) }}}/origin.jpg" />
+						</div>
 					</div>
 					<div class="hotel_part2">
-						<div class="hotel_part2_img1" style="background:url('{{{ URL::asset($hotels[0]->pic3_url) }}}/origin.jpg') no-repeat;">
-							<div class="hotel_price_bg">
-								<div class="hotel_price_show"><span style="font-size:30px;">RMB</span><span class="hotel_price">{{{ $hotels[0]->price }}}</span></div>
+						<div class="hotel_part2_img1" onmouseenter ="show_bg(0)">
+							<img src="{{{ URL::asset($hotels[0]->pic3_url) }}}/origin.jpg" />
+							<div class="hotel_base" onmouseleave="close_bg(0)">
+								<div class="hotel_part3_base"></div>
+								<div class="hotel_price_bg" >
+									<div class="hotel_price_show"><span style="font-size:30px;">RMB</span><span class="hotel_price">{{{ $hotels[0]->price }}}</span></div>
+								</div>
 							</div>
 						</div>
 						<div class="hote1_part2_word">
@@ -26,35 +34,46 @@
                             <div class="hote1_part2_word_text"><div class="hote_special">玩转斐济岛</div></div>
 						</div>
 					</div>
-					<div class="hotel_part3"  style="background:url('{{{ URL::asset($hotels[0]->pic4_url) }}}/origin.jpg') no-repeat;">
+					<div class="hotel_part3">
 						<div class="hotel_part3_top"></div>
-						<div class="hotel_part3_text">{{{ $hotels[0]->content }}}</div>
+						<div class="hotel_part3_content" onmouseenter="show_bg(1)">
+							<img src="{{{ URL::asset($hotels[0]->pic4_url) }}}/origin.jpg" />
+							<div class="hotel_base" onmouseleave="close_bg(1)">
+								<div class="hotel_part3_text">{{{ $hotels[0]->content }}}</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				
 				<div class="hotel_2">
-					<div class="hotel_part2">
+					<div class="hotel_part2" >
 						<div class="hote1_part2_word">
 							<div class="hote1_part2_word_text"><div class="hote_special">吃货走天下</div></div>
 							<div class="hote1_part2_word_top"></div>
 						</div>
-						<div class="hotel_part2_img1" style="margin:0px;background:url('{{{ URL::asset($hotels[1]->pic1_url) }}}/origin.jpg') no-repeat;">
-							<div class="hotel_price_bg">
-								<div class="hotel_price_show"><span style="font-size:30px;">RMB</span><span class="hotel_price">{{{ $hotels[1]->price }}}</span></div>
+						<div class="hotel_part2_img1" style="margin:0px;" onmouseenter="show_bg(2)">
+							<img src="{{{ URL::asset($hotels[0]->pic3_url) }}}/origin.jpg" />
+							<div class="hotel_base"  onmouseleave="close_bg(2)">
+								<div class="hotel_part3_base"></div>
+								<div class="hotel_price_bg">
+									<div class="hotel_price_show"><span style="font-size:30px;">RMB</span><span class="hotel_price">{{{ $hotels[0]->price }}}</span></div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="hotel_part1">
-						<div class="hotel_part1_img1" style="background:url('{{{ URL::asset($hotels[1]->pic2_url) }}}/origin.jpg') no-repeat;">
-							<div class="hotel_text_bg">
+						<div class="hotel_part1_img1" onmouseenter="show_bg(3)" >
+							<img src="{{{ URL::asset($hotels[1]->pic2_url) }}}/origin.jpg" />
+							<div class="hotel_base" onmouseleave="close_bg(3)">
 								<div class="hotel_text_show">{{{ $hotels[1]->content }}}</div>
 							</div>
 						</div>
-						<div class="hotel_part1_img2" style="background:url('{{{ URL::asset($hotels[1]->pic3_url) }}}/origin.jpg') no-repeat;"></div>
+						<div class="hotel_part1_img2">
+							<img src="{{{ URL::asset($hotels[1]->pic3_url) }}}/origin.jpg" />
+						</div>
 					</div>
-					<div class="hotel_part3" style="background:url('{{{ URL::asset($hotels[1]->pic4_url) }}}/origin.jpg') no-repeat;">
-						<!--div class="hotel_part3_top"></div>
-						<div class="hotel_part3_text">田园大酒店是按四星级标准兴建的一家综合性酒店。酒店位于市中心，地处梅州市的繁华黄金地带，地理位置优越，交通便利。 。</div -->
+					<div class="hotel_part3">
+						<img src="{{{ URL::asset($hotels[1]->pic4_url) }}}/origin.jpg" />
 					</div>
 				</div>
 				<div class="content_center">
@@ -283,3 +302,13 @@
 			</div>
 			<!-- 正文结束  -->
 			@stop
+			<script>
+				function show_bg(num)
+				{
+					$(".hotel_base").eq(num).slideDown("fast");
+				}
+				function close_bg(num)
+				{
+					$(".hotel_base").eq(num).slideUp("fast");
+				}
+			</script>
