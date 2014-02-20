@@ -41,11 +41,11 @@
 		<script type="text/javascript">
 			function check_screen()
 			{
-				var w=window.screen.width;
 				var width=document.documentElement.clientWidth;
+				var w=window.screen.width;
 				if(w<1920)
 				{
-					document.getElementById("box").style.left=-(1920-width)/2+"px";
+					document.getElementById("box").style.left=(w-1000)/2+"px";
 				}
 			}
 			check_screen();
