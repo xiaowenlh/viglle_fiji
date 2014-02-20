@@ -301,7 +301,6 @@
 				
 			</div>
 			<!-- 正文结束  -->
-			@stop
 			<script>
 				function show_bg(num)
 				{
@@ -312,3 +311,5 @@
 					$(".hotel_base").eq(num).slideUp("fast");
 				}
 			</script>
+			@stop
+		

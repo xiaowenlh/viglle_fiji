@@ -44,7 +44,7 @@
 				var w=window.screen.width;
 				if(w<1920)
 				{
-					document.getElementById("box").style.left=(w-1000)/2+"px";
+					document.getElementById("box").style.left=-(1920-w)/2+"px";
 				}
 			}
 			check_screen();
