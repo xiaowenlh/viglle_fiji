@@ -10,8 +10,7 @@
 }
 .content_title
 {
-	height:40px;
-	line-height:40px;
+	height:45px;
 	
 }
 .content_center
@@ -177,7 +176,7 @@
 	width:378px;
 	height:370px;
 	border:3px solid #0099ff;
-	margin-top:27px;
+	margin-top:20px;
 }
 .plane_show
 {
@@ -186,7 +185,7 @@
 	height:405px;
 	border:3px solid #0099ff;
 	border-left:0px;
-	margin-top:27px;
+	margin-top:20px;
 }
 .plane_mes
 {
@@ -253,7 +252,7 @@
 	height:475px;
 	margin-left:20px;
 	border:1px solid red;
-	margin-top:-38px;
+	margin-top:-48px;
 }
 .weather_top
 {

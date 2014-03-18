@@ -4,7 +4,7 @@
 }
 .hotel_1
 {
-	height:500px;
+	height:510px;
 	margin-top:30px;
 	width:100%;
 }
@@ -118,7 +118,7 @@
 {
 	width:50px;
 	height:500px;
-	background:#999;
+	background:#333;
 }
 .hote_special
 {
@@ -144,7 +144,7 @@
 .hotel_part3_text
 {
 	position:absolute;
-	top:30px;
+	top:60px;
 	width:190px;
 	left:20px;
 	color:#fff;

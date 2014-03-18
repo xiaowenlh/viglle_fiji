@@ -10,7 +10,7 @@
 @section('content')
 			<!-- 正文开始  -->
 			<div class="content">
-                <div class="content_title"><div style="float:left;"><span style="font-size:30px;color:#0099ff;">旅行</span><strong style="color:#333333;">攻略</strong></div>
+                <div class="content_title"><div style="float:left;padding-top:5px;"><span style="font-size:30px;color:#0099ff;">旅行</span><strong style="color:#333333;">攻略</strong></div>
 <a href="/travel/index">    <div class="more_raiders"></div></a>
 </div>
 				<div class="content_body">
@@ -40,11 +40,8 @@
 					</div>
 					<div class="hotel_part3">
 						<div class="hotel_part3_top"></div>
-						<div class="hotel_part3_content" onmouseenter="show_bg(1)">
-							<img src="{{{ URL::asset($hotels[0]->pic4_url) }}}/origin.jpg" />
-							<div class="hotel_base" onmouseleave="close_bg(1)">
+						<div class="hotel_part3_content">
 								<div class="hotel_part3_text">{{{ $hotels[0]->content }}}</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -56,7 +53,7 @@
 							<div class="hote1_part2_word_top"></div>
 						</div>
 						<div class="hotel_part2_img1" style="margin:0px;" onmouseenter="show_bg(2)">
-							<img src="{{{ URL::asset($hotels[0]->pic3_url) }}}/origin.jpg" />
+							<img src="{{{ URL::asset($hotels[1]->pic1_url) }}}/origin.jpg" />
 							<div class="hotel_base"  onmouseleave="close_bg(2)">
 								<div class="hotel_part3_base"></div>
 								<div class="hotel_price_bg">
@@ -87,7 +84,7 @@
 							<table cellspacing=0 cellpadding=0 class="plane_mes">
 								<tr>
 									<td class="td1">航程类型</td>
-									<td align=center><input type="radio" name="plane_type" value="0" />单程<input type="radio" name="plane_type" style="margin-left:25px;" value="0"  />往返</td>
+									<td align=center><input type="radio" name="plane_type" value="0" />&nbsp;单程<input type="radio" name="plane_type" style="margin-left:25px;" value="0"  />&nbsp;往返</td>
 								</tr>
 								<tr>
 									<td class="td1">出发城市</td>
@@ -109,8 +106,8 @@
 						</div>
 						<div class="plane_bg"></div>
 					</div>
-					<div class="plane_show">
-						<table cellspacing=8 cellpadding=0 style="font-size:18px;width:340px;margin:40px auto;border:0px solid red;">
+					<!--div class="plane_show">
+						<table cellspacing=0 cellpadding=0 style="font-size:18px;width:340px;margin:40px auto;border:0px solid red;">
 							<tr class="tr1">
 								<td class="plane_date_td">2013/12/13</td>
 								<td class="plane_city_td">香港 - 斐济</td>
@@ -142,7 +139,7 @@
 								<td class="plane_price_td">￥3968元</td>
 							</tr>
 						</table>
-					</div>
+					</div-->
 					<div class="weather">
 						<div class="weather_top"><span style="font-size:30px;margin-left:20px;">天气</span><span style="font-size:16px;margin-left:30px;">{{ date('Y/m/d') }}</span></div>
 						<?php

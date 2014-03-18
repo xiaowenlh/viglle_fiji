@@ -35,13 +35,10 @@
 							<div class="hote1_part2_word_text"><div class="hote_special">特色酒店A</div></div>
 						</div>
 					</div>
-					<div class="hotel_part3"  style="background:url('{{{ URL::asset($hotels[0]->pic4_url) }}}/origin.jpg') no-repeat;">
+					<div class="hotel_part3">
 						<div class="hotel_part3_top"></div>
-						<div class="hotel_part3_content" onmouseenter="show_bg(1)">
-							<img src="{{{ URL::asset($hotels[0]->pic4_url) }}}/origin.jpg" />
-							<div class="hotel_base" onmouseleave="close_bg(1)">
-								<div class="hotel_part3_text">{{{ $hotels[0]->content }}}</div>
-							</div>
+						<div class="hotel_part3_content">
+							<div class="hotel_part3_text">{{{ $hotels[0]->content }}}</div>
 						</div>
 					</div>
 				</div>
@@ -81,11 +78,8 @@
 				<div class="hotel_3">
 					<div class="hotel_part3"  style="margin:0px;">
 						<div class="hotel_part3_top"></div>
-						<div class="hotel_part3_content" onmouseenter="show_bg(4)">
-							<img src="{{{ URL::asset($hotels[0]->pic4_url) }}}/origin.jpg" />
-							<div class="hotel_base" onmouseleave="close_bg(4)">
+						<div class="hotel_part3_content">
 								<div class="hotel_part3_text">{{{ $hotels[2]->content }}}</div>
-							</div>
 						</div>
 					</div>
 					<div class="hotel_part1" style="margin-left:10px;">
